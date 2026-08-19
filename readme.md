@@ -1,4 +1,4 @@
-![Header](./macropad_product.png)
+![Header](assets/images/macropad_product.png)
 
 
 
@@ -150,7 +150,7 @@ The driver should be already active after the install
 
 ## Device layout
 - Physical layout of keys for reference</br></br>
-  <img src="macroboard_map.png" width=720>
+  <img src="assets/images/macroboard_map.png" width=720>
 
 ## Uninstall
 To remove execute as root:

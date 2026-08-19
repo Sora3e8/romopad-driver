@@ -1,4 +1,5 @@
-#!.venv/bin/python
+#!/bin/env python
+
 import sys
 import tkinter as tk
 import time

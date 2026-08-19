@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "$(cat romopad.service)" | sed "s/\$DISPLAY/$(echo $DISPLAY)/g" > romopad.service.tmp

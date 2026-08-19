@@ -1,3 +1,2 @@
 evdev
 python-dotenv
-PyGObject
