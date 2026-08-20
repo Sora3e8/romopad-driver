@@ -1,5 +1,8 @@
 layout.xml
 build
 dist
-*.egg-info
+develop-eggs/
+*.egg-info/
+eggs/
+.eggs/
 __pycache__

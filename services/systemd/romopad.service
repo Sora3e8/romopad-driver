@@ -5,9 +5,8 @@ After=graphical-session.target
 
 
 [Service]
-WorkingDirectory=/opt/romopad/
-ExecStart=/opt/romopad/romopad --svc start
-ExecStop=/opt/romopad/romopad --svc stop
+ExecStart=romopad-driver --svc start
+ExecStop=romopad-driver --svc stop
 KillMode=process
 
 [Install]
