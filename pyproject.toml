@@ -3,7 +3,7 @@ requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name="romopad-driver"
+name="romopad"
 version = "1.0.0"
 description = "Allows you to remap Romoral 12key macropad, to be useful on linux."
 requires-python = ">=3.14"
@@ -15,12 +15,15 @@ license = "GPL-3.0-or-later"
 
 [tool.setuptools]
 include-package-data = true
+package-dir = {"" = "src"}
+py-modules = ["romopad", "config_loader", "indicator", "macropad_daemon"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+namespaces = false
 
 [tool.setuptools.data-files]
 "/lib/udev/rules.d" = ["udev/*.rules"]
 
 [project.scripts]
-romopad-driver="romopad-driver:main"
+romopad-driver="romopad:main"

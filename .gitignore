@@ -1,3 +1,4 @@
 layout.xml
-.venv
+build
+dist
 __pycache__

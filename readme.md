@@ -49,9 +49,9 @@ This driver aims to aid that, the driver utilizes python-evdev to detect and rem
 To install execute following commands:
 
 ```bash
-$ git clone https://github.com/Sora-3e8/romopad-driver
-$ cd romopad-driver
-$ sudo make install
+$ git clone https://github.com/Sora-3e8/romopad-driver && romopad-driver
+$ python -m build
+$ pipx install .
 $ systemctl --user daemon-reload
 $ systemctl --user enable --now romopad.service
 ```
@@ -153,8 +153,8 @@ The driver should be already active after the install
   <img src="assets/images/macroboard_map.png" width=720>
 
 ## Uninstall
-To remove execute as root:
+To remove execute:
 ```bash
-$ systemctl --user disable --now macroboard_driver.service
-$ sudo make uninstall
+$ pipx uninstall romopad
+$ systemctl --user disable --now romopad.service
 ```
