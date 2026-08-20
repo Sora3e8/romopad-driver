@@ -1,0 +1,5 @@
+config_loader
+indicator
+libs
+macropad_daemon
+romopad

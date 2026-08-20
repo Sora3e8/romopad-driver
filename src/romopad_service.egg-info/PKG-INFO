@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: romopad-service
+Version: 1.0.0
+Summary: Allows you to remap Romoral 12key macropad, to be useful on linux.
+License-Expression: GPL-3.0-or-later
+Requires-Python: >=3.14
+Requires-Dist: evdev
+Requires-Dist: python-dotenv

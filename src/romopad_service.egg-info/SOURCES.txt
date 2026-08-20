@@ -1,0 +1,16 @@
+pyproject.toml
+src/config_loader.py
+src/indicator.py
+src/macropad_daemon.py
+src/romopad.py
+src/libs/__init__.py
+src/libs/config_loader.py
+src/libs/service_controller.py
+src/libs/socket_controller.py
+src/romopad_service.egg-info/PKG-INFO
+src/romopad_service.egg-info/SOURCES.txt
+src/romopad_service.egg-info/dependency_links.txt
+src/romopad_service.egg-info/entry_points.txt
+src/romopad_service.egg-info/requires.txt
+src/romopad_service.egg-info/top_level.txt
+udev/90-romopad.rules
