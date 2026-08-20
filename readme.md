@@ -49,11 +49,10 @@ This driver aims to aid that, the driver utilizes python-evdev to detect and rem
 To install execute following commands:
 
 ```bash
-$ git clone https://github.com/Sora-3e8/romopad-driver && romopad-driver
+$ git clone https://github.com/Sora-3e8/romopad-driver && cd romopad-driver
 $ python -m build
 $ pipx install .
-$ systemctl --user daemon-reload
-$ systemctl --user enable --now romopad.service
+$ sudo driver-setup.py install
 ```
 ## Usage
 The driver should be already active after the install
@@ -155,6 +154,6 @@ The driver should be already active after the install
 ## Uninstall
 To remove execute:
 ```bash
-$ pipx uninstall romopad
-$ systemctl --user disable --now romopad.service
+$ sudo driver-setup.py uninstall
+$ pipx uninstall romopad-driver
 ```
