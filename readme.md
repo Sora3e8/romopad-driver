@@ -54,9 +54,9 @@ $ sudo driver-setup.py install
 ```
 ## Usage
 The driver should be already active after the install
-- You can check the status using: `systemctl --user status romopad.service`
-- To enable: `systemctl --user enable --now romopad.service`
-- To disable: `systemctl --user disable --now romopad.service`
+- You can check the status using: `systemctl --user status romopad-driver.service`
+- To enable: `systemctl --user enable --now romopad-driver.service`
+- To disable: `systemctl --user disable --now romopad-driver.service`
 
 ## 🐞 Known issues
 - In some environments the layer indicator may not show up, this is an issue caused by systemd not being able to pass the display variable as it was not set yet
@@ -66,7 +66,7 @@ The driver should be already active after the install
   $ systemctl --user restart romopad.service
   ```
 - For this reason it's highly recommended for wm manager sessions, to start the service using the wm itself
-- Example Hyprland: `exec-once = systemctl --user start romopad.service`
+- Example Hyprland: `exec-once = systemctl --user start romopad-driver.service`
 
 - The indicator now depends on the Xorg due to Tkinter being dependent, currently there're plans to replace it with Gtk4.
   however that's still a bit far, but it will be needed to be done as Xorg is being phased out.
