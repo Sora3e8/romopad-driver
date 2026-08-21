@@ -29,10 +29,9 @@ This driver aims to aid that, the driver utilizes python-evdev to detect and rem
 
 
 ## Dependencies
- - Python
- - Pip
+ - python3
+ - python-pipx
  - python-evdev (automatically fetched by venv)
- - make
 
 
 ## 📦 Installation
@@ -50,8 +49,7 @@ To install execute following commands:
 
 ```bash
 $ git clone https://github.com/Sora-3e8/romopad-driver && cd romopad-driver
-$ python -m build
-$ pipx install .
+$ sudo pipx install . --global
 $ sudo driver-setup.py install
 ```
 ## Usage
@@ -155,5 +153,5 @@ The driver should be already active after the install
 To remove execute:
 ```bash
 $ sudo driver-setup.py uninstall
-$ pipx uninstall romopad-driver
+$ sudo pipx uninstall romopad-driver
 ```

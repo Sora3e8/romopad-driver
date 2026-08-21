@@ -1,6 +1,4 @@
 type            = process
-working-dir     = romopad-driver
 command         = romopad-driver --svc start
 stop-command    = romopad-driver --svc stop
-logfile         = "$HOME/.local/state/romopad-driver/romopad-driver.log"
 log-type        = buffer

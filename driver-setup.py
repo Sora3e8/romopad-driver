@@ -16,8 +16,8 @@ setup_parser = argparse.ArgumentParser(prog="setup", description="Setups the rom
 _ = setup_parser.add_argument("action", choices=["install", "uninstall"])
 
 def main():
-    action: list[Any] = vars(setup_parser.parse_args())["action"] #pyright: ignore[reportAssignmentType, reportExplicitAny]
-    if action: globals()[action]()
+    action: list[Any] = vars(setup_parser.parse_args())["action"] #pyright: ignore[reportAny,reportExplicitAny]
+    if action: globals()[action]() #pyright: ignore[reportArgumentType] 
 
 def install():
     print("Checking permissions...")
@@ -37,8 +37,8 @@ def install():
     
     print("Reloading udev rules...")
     # Reload rules
-    _ = os.system("udevadm control --reload-rules")
-    _ = os.system("udevadm trigger")
+    _ = sb.run(["udevadm", "control", "--reload-rules"])
+    _ = sb.run(["udevadm", "trigger"])
     
     print("Detecting init system...")
     # Retrieves currently supported init systems
@@ -55,12 +55,14 @@ def install():
     
     print("Installing services.")
     for srv in glob.glob(f"services/{init_system}/*"):
-        sh.copy(srv,SERVICE_DIRECTORIES[init_system])
+        print(f"Copying service {srv} -> {SERVICE_DIRECTORIES[init_system]} ...")
+        res = sh.copy(srv,SERVICE_DIRECTORIES[init_system])
+        if not res: 
+            print(f"Failed service: {SERVICE_DIRECTORIES[init_system]}{srv}")
+            return
 
     print("Setup complete!")
-
-    
-    
+ 
 def uninstall():
 
     # Terminates if we do not have permission to write into "/lib/udev/rules.d"
@@ -88,8 +90,6 @@ def uninstall():
     for srv in os.listdir(f"services/{init_system}/"):
         if os.path.isfile(f"services/{init_system}/{srv}"):
             os.remove(f"{SERVICE_DIRECTORIES[init_system]}{srv}")
-
-
 
 if __name__ == "__main__":
     main()
