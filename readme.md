@@ -50,7 +50,7 @@ To install execute following commands:
 ```bash
 $ git clone https://github.com/Sora-3e8/romopad-driver && cd romopad-driver
 $ sudo pipx install . --global
-$ sudo driver-setup.py install
+$ sudo ./driver-setup.py install
 ```
 ## Usage
 The driver should be already active after the install
@@ -152,6 +152,6 @@ The driver should be already active after the install
 ## Uninstall
 To remove execute:
 ```bash
-$ sudo driver-setup.py uninstall
+$ sudo ./driver-setup.py uninstall
 $ sudo pipx uninstall romopad-driver
 ```
